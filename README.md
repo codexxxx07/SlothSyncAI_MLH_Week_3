@@ -170,35 +170,35 @@ Note: Some features (file system access) will not work in web mode.
 ## How to Use
 
 1. **Scan a Folder**
-   - Navigate to "Scan Folders"
-   - Click "Browse" to select a directory
-   - Click "Scan" to analyze files
+   - Open "Organize Files" in the sidebar
+   - Click "Choose folder" to select a directory
+   - Click "Scan folder" to analyze files
    - Review the summary and category distribution
 
-2. **Generate Organization Plan**
-   - After scanning, go to "Organization Plan"
-   - (Optional) Test AI connection and use "Analyze with AI" for smart suggestions
-   - Review proposed categories and filename suggestions
-   - Edit or exclude files as needed
-   - Approve or reject individual changes
-   - Click "Apply Approved Changes" to execute
+2. **Review and Apply the Plan**
+   - Click "Review organization plan" to open the "Review & apply" step
+   - (Optional) Click "Analyze with AI" for smart suggestions
+   - Edit names, change categories and untick files you want to exclude
+   - Click "Apply N changes" and confirm in the dialog
+   - Nothing is moved until you confirm
 
 3. **Find Duplicates**
-   - Go to "Duplicates"
-   - Click "Find Duplicates" to scan for duplicate files
-   - Review duplicate groups
-   - Manually review and delete duplicates as needed
+   - Go to "Duplicate Finder"
+   - Click "Find duplicates" to hash every scanned file (SHA-256)
+   - Review duplicate groups, ordered by wasted space
+   - The tool only reports - remove copies with the organize plan or your file manager
 
 4. **View History**
    - Go to "Activity History"
-   - View all completed operations
-   - Use "Undo" for reversible operations
+   - Expand any operation to see every file involved
+   - Use "Undo" to move files back to their original locations
+   - Clear history only clears the log, never your files
 
 5. **Configure Settings**
    - Go to "Settings"
-   - Configure Ollama endpoint and model
-   - Test AI connection
-   - Review privacy information
+   - Configure the Ollama endpoint and model, then "Save settings"
+   - Test the connection and pick a model from the list
+   - Toggle apply-confirmations and review privacy information
 
 ## Architecture
 
@@ -224,7 +224,7 @@ Note: Some features (file system access) will not work in web mode.
   - `state.js`: Local storage helpers for scan results
 
 - `src/pages/`: Application screens
-  - `Overview.jsx`: Dashboard with statistics
+  - `Overview.jsx`: Dashboard with real activity stats
   - `ScanFolders.jsx`: Folder selection and scanning
   - `OrganizationPlan.jsx`: Review and approve changes
   - `Duplicates.jsx`: Duplicate file detection

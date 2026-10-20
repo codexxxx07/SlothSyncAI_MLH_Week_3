@@ -18,6 +18,29 @@ export const OllamaService = {
     localStorage.setItem('ollama_model', model);
   },
 
+  isLocalEndpoint: (endpoint = OllamaService.getEndpoint()) => {
+    try {
+      const { hostname } = new URL(endpoint);
+      return (
+        hostname === 'localhost' ||
+        hostname === '127.0.0.1' ||
+        hostname === '::1' ||
+        hostname === '0.0.0.0' ||
+        hostname === '[::1]'
+      );
+    } catch {
+      return false;
+    }
+  },
+
+  getEndpointHost: (endpoint = OllamaService.getEndpoint()) => {
+    try {
+      return new URL(endpoint).hostname;
+    } catch {
+      return endpoint;
+    }
+  },
+
   testConnection: async () => {
     try {
       const endpoint = OllamaService.getEndpoint();
