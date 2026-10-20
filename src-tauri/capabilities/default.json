@@ -1,0 +1,26 @@
+{
+  "$schema": "../gen/schemas/desktop-schema.json",
+  "identifier": "default",
+  "description": "enables the default permissions",
+  "windows": [
+    "main"
+  ],
+  "permissions": [
+    "core:default",
+    "core:window:allow-start-dragging",
+    "core:window:allow-maximize",
+    "core:window:allow-minimize",
+    "core:window:allow-close",
+    "dialog:allow-open",
+    "dialog:allow-save",
+    "fs:allow-read-file",
+    "fs:allow-write-file",
+    "fs:allow-read-dir",
+    "fs:allow-exists",
+    "fs:allow-metadata",
+    "fs:allow-copy-file",
+    "fs:allow-remove",
+    "fs:allow-rename",
+    "fs:allow-mkdir"
+  ]
+}
